@@ -2,7 +2,7 @@
 本项目实现了爬取关于《复仇者联盟4》（下文简称复联4）的影评数据，由此构建社交网络分析其主要成员的重要程度。通过基于朴素贝叶斯模型的情感分析分析观众对于不同成员的情感态度，由此构建新的情感网络，同样应用节点中心性方法对其进行分析。
 <br>本项目的完整说明请参考[宋祎男.王博.基于节点中心性和机器学习的《复仇者联盟》社交网络研究](https://github.com/bobo199830/AvengersEmotions/blob/master/基于节点中心性和机器学习的《复仇者联盟》社交网络研究%20王博%20宋祎男.pdf)
 ## 爬取数据
-具体代码可参考maoyan.py文件，在此仅给出一种简单的实现方式。在实际实现时我们需加入代理池等防止被反爬。这里我们获取了102615条影评数据用于后续分析，数据文件详见Film Reviews of Avengers.xlsx。
+具体代码可参考[maoyan.py](https://github.com/bobo199830/AvengersEmotions/blob/master/maoyan.py)文件，在此仅给出一种简单的实现方式。在实际实现时我们需加入代理池等防止被反爬。这里我们获取了102615条影评数据用于后续分析，数据文件详见[Film Reviews of Avengers.xlsx](https://github.com/bobo199830/AvengersEmotions/blob/master/Film%20Reviews%20of%20Avengers.xlsx)文件。
 <br>这里给出构建代理池的一种方法：
 ```Python
 1.	def get_ip_list():  
@@ -29,11 +29,11 @@
 22.	    return proxy_ip  
 ```
 ## 根据关键词提取不同成员的影评信息
-具体代码可参考Keywords.py，其基本原理便是应用正则表达式对其进行匹配，在此不做赘述。
+具体代码可参考[Keywords.py](https://github.com/bobo199830/AvengersEmotions/blob/master/Keywords.py)，其基本原理便是应用正则表达式对其进行匹配，在此不做赘述。
 ## 构建朴素贝叶斯模型，应用其进行情感分析
-具体代码可参考Naive Bayesian model.py，其训练结果如train_model.m所示，后续可通过Python中的joblib直接调用该模型进行预测。其中所用到的停用词列表如stopwordsHIT.txt所示。
+具体代码可参考[Naive Bayesian model.py](https://github.com/bobo199830/AvengersEmotions/blob/master/Naive%20Bayesian%20model.py)，其训练结果如[train_model.m](https://github.com/bobo199830/AvengersEmotions/blob/master/train_model.m)所示，后续可通过Python中的joblib直接调用该模型进行预测。其中所用到的停用词列表如[stopwordsHIT.txt](https://github.com/bobo199830/AvengersEmotions/blob/master/stopwordsHIT.txt)所示。
 ## 构建社交网络，分析其特征
-通过Python中的Networkx库我们可以非常轻松的构建复杂网络，并通过相关函数计算其度中心性、介数中心性、紧密中心性等从而分析其特征，具体代码可参考Centrality.py。
+通过Python中的Networkx库我们可以非常轻松的构建复杂网络，并通过相关函数计算其度中心性、介数中心性、紧密中心性等从而分析其特征，具体代码可参考[Centrality.py](https://github.com/bobo199830/AvengersEmotions/blob/master/Centrality.py)。
 ![不带内部关系的复联成员网络](https://github.com/bobo199830/AvengersEmotions/blob/master/不带内部关系的复联成员网络.bmp)
 <br>不带内部关系的复联成员网络
 ![带内部关系的复联成员网络](https://github.com/bobo199830/AvengersEmotions/blob/master/带内部关系的复联成员网络.bmp)
