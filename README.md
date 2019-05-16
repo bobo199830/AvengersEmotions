@@ -33,3 +33,4 @@
 具体代码可参考Naive Bayesian model.py，其训练结果如train_model.m所示，后续可通过Python中的joblib直接调用该模型进行预测。其中所用到的停用词列表如stopwordsHIT.txt所示。
 ## 构建社交网络，分析其特征
 通过Python中的Networkx库我们可以非常轻松的构建复杂网络，并通过相关函数计算其度中心性、介数中心性、紧密中心性等从而分析其特征，具体代码可参考Centrality.py。
+![带内部关系的复联成员关系图](https://github.com/bobo199830/AvengersEmotions/blob/master/带内部关系的复联成员关系图.bmp)
